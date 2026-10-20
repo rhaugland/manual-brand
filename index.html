@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #1a1a1f;
+      color: #e8e6e1;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #e8e6e1;
+      color: #1a1a1f;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .content {
+      position: relative;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 40px;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-right a {
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      opacity: 0.35;
+      transition: opacity 0.3s;
+    }
+
+    .nav-right a:hover { opacity: 1; }
+
+    /* ── HERO ── */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 9vw, 130px);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+    }
+
+    .hero .tagline {
+      margin-top: 16px;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: lowercase;
+      opacity: 0.7;
+    }
+
+    /* ── DROP SECTION ── */
+    .drop-section {
+      background: url('clouds-bg.jpg') center center / cover no-repeat;
+      color: #ffffff;
+      padding: 120px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .drop-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 0;
+    }
+
+    .drop-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    .drop-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .drop-header .drop-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .drop-header .emphasis {
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+    }
+
+    .drop-header h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: lowercase;
+      color: #ffffff;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .product-card {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .product-visual {
+      aspect-ratio: 1;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.4s;
+    }
+
+    .product-visual:hover {
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .product-text {
+      margin-top: 24px;
+    }
+
+    .product-text h3 {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .product-text .desc {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.7;
+      opacity: 0.75;
+    }
+
+    .product-text .price {
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .product-text .buy-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 32px;
+      background: #1a1a1f;
+      border: none;
+      border-radius: 3px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #e8e6e1;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      text-transform: lowercase;
+    }
+
+    .product-text .buy-btn:hover {
+      opacity: 0.8;
+    }
+
+    /* ── SIGNUP ── */
+    .signup {
+      padding: 160px 40px;
+      text-align: center;
+    }
+
+    .signup .prompt {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: lowercase;
+      opacity: 0.25;
+      margin-bottom: 28px;
+    }
+
+    .email-form {
+      display: inline-flex;
+      border-bottom: 1px solid rgba(232, 230, 225, 0.15);
+    }
+
+    .email-form input {
+      background: transparent;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      padding: 10px 0;
+      width: 240px;
+      outline: none;
+      letter-spacing: 0.03em;
+      color: #e8e6e1;
+    }
+
+    .email-form input::placeholder {
+      color: rgba(232, 230, 225, 0.2);
+    }
+
+    .email-form button {
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      opacity: 0.35;
+      transition: opacity 0.3s;
+      padding: 10px 0 10px 16px;
+      color: #e8e6e1;
+    }
+
+    .email-form button:hover { opacity: 1; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 28px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer .f-left {
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      opacity: 0.12;
+    }
+
+    footer .f-right {
+      display: flex;
+      gap: 24px;
+    }
+
+    footer .f-right a {
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      opacity: 0.18;
+      transition: opacity 0.3s;
+    }
+
+    footer .f-right a:hover { opacity: 0.5; }
+
+    @media (max-width: 768px) {
+      nav { padding: 20px 20px; }
+      .nav-right { gap: 20px; }
+      .hero { padding: 0 20px; }
+      .product-section { padding: 60px 24px; }
+      .product-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        max-width: 400px;
+      }
+      .signup { padding: 100px 24px; }
+      .email-form input { width: 180px; }
+      footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+
+    <nav>
+      <div class="logo">manual</div>
+    </nav>
+
+    <section class="hero">
+      <h1>manual</h1>
+      <p class="tagline"><span style="text-decoration:underline;letter-spacing:0">&nbsp;&nbsp;&nbsp;&nbsp;</span> without influence</p>
+    </section>
+
+    <section class="drop-section" id="drop">
+
+      <div class="drop-header">
+        <div class="drop-label">the cloud drop</div>
+        <h2>imagine without influence</h2>
+      </div>
+      <div class="product-card">
+        <div class="product-visual"></div>
+        <div class="product-text">
+          <h3>Sticker</h3>
+          <p class="desc">remember when looking up at the clouds, not down at the comments, gave you your best ideas</p>
+          <div class="price">$48</div>
+          <button class="buy-btn">get it</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="signup">
+      <p class="prompt">drops only</p>
+      <form class="email-form" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="email" required>
+        <button type="submit">ok</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="f-left">&copy; 2026 manual</div>
+      <div class="f-right">
+        <a href="#">ig</a>
+        <a href="#">contact</a>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+</body>
+</html>

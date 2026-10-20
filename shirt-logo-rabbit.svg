@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 380">
+  <path d="
+    M155,120
+    Q150,108 148,95
+    Q145,78 148,62
+    Q150,48 158,38
+    Q165,28 175,25
+    Q185,22 192,28
+    Q198,32 200,42
+    Q202,52 200,65
+    Q198,78 198,88
+    Q200,95 205,100
+    Q212,95 218,88
+    Q220,78 218,65
+    Q216,52 218,42
+    Q220,32 228,28
+    Q235,22 245,25
+    Q255,28 262,38
+    Q270,48 272,62
+    Q275,78 272,95
+    Q270,108 265,120
+    Q275,128 280,138
+    Q288,148 292,160
+    Q298,172 298,185
+    Q300,198 298,212
+    Q295,225 290,235
+    Q298,245 295,258
+    Q292,268 285,275
+    Q280,285 270,288
+    Q260,295 248,292
+    Q235,298 222,295
+    Q210,298 198,292
+    Q185,295 175,288
+    Q165,285 158,275
+    Q150,268 148,258
+    Q142,248 145,235
+    Q140,225 138,212
+    Q135,198 135,185
+    Q135,172 142,160
+    Q148,148 155,138
+    Q160,128 155,120
+    Z"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+  />
+  <text
+    x="217"
+    y="215"
+    text-anchor="middle"
+    font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="18"
+    font-weight="300"
+    letter-spacing="4"
+    fill="#ffffff"
+    dominant-baseline="middle"
+  >without</text>
+  <text
+    x="217"
+    y="242"
+    text-anchor="middle"
+    font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="18"
+    font-weight="300"
+    letter-spacing="4"
+    fill="#ffffff"
+    dominant-baseline="middle"
+  >influence</text>
+</svg>

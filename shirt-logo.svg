@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380">
+  <!-- Left hemisphere - big puffy cloud bumps -->
+  <path d="
+    M258,65
+    Q245,55 230,60
+    Q212,50 195,58
+    Q178,50 162,62
+    Q145,58 135,72
+    Q120,72 115,88
+    Q102,95 105,112
+    Q95,125 100,142
+    Q92,158 100,172
+    Q95,188 105,200
+    Q100,215 112,228
+    Q108,242 125,252
+    Q122,265 140,272
+    Q145,282 162,285
+    Q175,292 192,295
+    Q210,300 230,302
+    Q245,305 258,305
+  "
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+  />
+  <!-- Right hemisphere - big puffy cloud bumps -->
+  <path d="
+    M262,65
+    Q275,55 290,60
+    Q308,50 325,58
+    Q342,50 358,62
+    Q375,58 385,72
+    Q400,72 405,88
+    Q418,95 415,112
+    Q425,125 420,142
+    Q428,158 420,172
+    Q425,188 415,200
+    Q420,215 408,228
+    Q412,242 395,252
+    Q398,265 380,272
+    Q375,282 358,285
+    Q345,292 328,295
+    Q310,300 290,302
+    Q275,305 262,305
+  "
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Soft center divide - gentle wavy line -->
+  <path d="
+    M260,68
+    C252,95 270,115 258,142
+    C248,168 272,192 260,218
+    C250,242 268,268 260,302
+  "
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1"
+    stroke-linecap="round"
+    opacity="0.5"
+  />
+
+  <!-- Brain stem - small puffy -->
+  <path d="
+    M250,302
+    Q248,312 245,320
+    Q242,332 248,340
+    Q255,348 262,340
+    Q268,332 265,320
+    Q262,312 260,302
+  "
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.3"
+    stroke-linejoin="round"
+  />
+
+  <text
+    x="260"
+    y="190"
+    text-anchor="middle"
+    font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="22"
+    font-weight="300"
+    letter-spacing="5"
+    fill="#ffffff"
+    dominant-baseline="middle"
+  >without influence</text>
+</svg>
