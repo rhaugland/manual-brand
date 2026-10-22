@@ -88,124 +88,130 @@
       opacity: 0.7;
     }
 
-    /* ── DROP SECTION ── */
-    .drop-section {
-      background: url('clouds-bg.jpg') center center / cover no-repeat;
-      color: #ffffff;
-      padding: 120px 40px;
-      position: relative;
-      overflow: hidden;
+    /* ── DROPS ── */
+    .drops-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      padding: 0;
     }
 
-    .drop-section::before {
+    .drop-card {
+      color: #ffffff;
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .drop-clouds { background: url('clouds-bg.jpg') center center / cover no-repeat; }
+    .drop-fire { background: url('fire-bg.jpg') center center / cover no-repeat; }
+    .drop-water { background: url('water-bg.jpg') center center / cover no-repeat; }
+    .drop-fog { background: url('fog-bg.jpg') center center / cover no-repeat; }
+
+    .drop-card:hover {
+      transform: scale(1.015);
+    }
+
+    .drop-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.15) 0%,
+        rgba(0,0,0,0.05) 40%,
+        rgba(0,0,0,0.4) 100%
+      );
       z-index: 0;
     }
 
-    .drop-section > * {
+    .drop-card > * {
       position: relative;
       z-index: 1;
     }
 
-
-    .drop-header {
-      text-align: center;
-      margin-bottom: 80px;
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .drop-header .drop-label {
+    .drop-label {
       font-size: 9px;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 16px;
+      opacity: 0.6;
     }
 
-    .drop-header .emphasis {
-      text-decoration: underline;
-      text-underline-offset: 6px;
-      text-decoration-thickness: 1px;
+    .card-center {
+      text-align: center;
     }
 
-    .drop-header h2 {
-      font-size: clamp(28px, 4vw, 48px);
-      font-weight: 500;
-      letter-spacing: 0.06em;
+    .card-center h2 {
+      font-size: 56px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
       text-transform: lowercase;
       color: #ffffff;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 30px rgba(0,0,0,0.3);
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
-      max-width: 900px;
-      margin: 0 auto;
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
     }
 
-    .product-card {
-      text-align: center;
-    }
-
-    .product-visual {
-      aspect-ratio: 1;
-      background: rgba(255, 255, 255, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.4s;
-    }
-
-    .product-visual:hover {
-      background: rgba(255, 255, 255, 0.55);
-    }
-
-    .product-text {
-      margin-top: 12px;
-    }
-
-    .product-text h3 {
-      font-size: 20px;
+    .card-bottom-left h3 {
+      font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.02em;
     }
 
-    .product-text .desc {
-      margin-top: 8px;
-      font-size: 13px;
-      line-height: 1.7;
-      opacity: 0.75;
+    .card-bottom-left .desc {
+      margin-top: 4px;
+      font-size: 11px;
+      opacity: 0.5;
+      letter-spacing: 0.08em;
     }
 
-    .product-text .price {
-      margin-top: 16px;
-      font-size: 18px;
+    .card-bottom-right {
+      text-align: right;
+    }
+
+    .card-bottom-right .price {
+      font-size: 16px;
       font-weight: 500;
     }
 
-    .product-text .buy-btn {
+    .card-bottom-right .buy-btn {
       display: inline-block;
-      margin-top: 16px;
-      padding: 12px 32px;
-      background: #1a1a1f;
-      border: none;
+      margin-top: 8px;
+      padding: 8px 20px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
       border-radius: 3px;
       font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.1em;
-      color: #e8e6e1;
+      color: #ffffff;
       cursor: pointer;
-      transition: opacity 0.3s;
+      transition: background 0.3s;
       text-transform: lowercase;
     }
 
-    .product-text .buy-btn:hover {
-      opacity: 0.8;
+    .card-bottom-right .buy-btn:hover {
+      background: rgba(255,255,255,0.25);
     }
 
     /* ── SIGNUP ── */
@@ -290,11 +296,8 @@
       nav { padding: 20px 20px; }
       .nav-right { gap: 20px; }
       .hero { padding: 0 20px; }
-      .product-section { padding: 60px 24px; }
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
+      .drops-grid { grid-template-columns: 1fr; }
+      .card-center h2 { font-size: 40px; }
       .signup { padding: 100px 24px; }
       .email-form input { width: 180px; }
       footer {
@@ -319,57 +322,82 @@
       <p class="tagline"><span style="text-decoration:underline;letter-spacing:0">&nbsp;&nbsp;&nbsp;&nbsp;</span> without influence</p>
     </section>
 
-    <section class="drop-section" id="drop">
-
-      <div class="drop-header">
-        <div class="drop-label">the cloud drop</div>
-        <h2><span class="emphasis">imagine</span> without influence</h2>
-      </div>
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="product-visual"></div>
-          <div class="product-text">
-            <h3>Sticker</h3>
-            <div class="price">$48</div>
-          </div>
+    <div class="drops-grid">
+      <section class="drop-card drop-clouds" id="drop">
+        <div class="card-top">
+          <div class="drop-label">001 — the cloud drop</div>
         </div>
-        <div class="product-card">
-          <div class="product-visual"></div>
-          <div class="product-text">
-            <h3>Tee</h3>
+        <div class="card-center">
+          <h2>look up</h2>
+        </div>
+        <div class="card-bottom">
+          <div class="card-bottom-left">
+            <h3>Heavyweight Tee</h3>
+            <p class="desc">without influence</p>
+          </div>
+          <div class="card-bottom-right">
             <div class="price">$68</div>
+            <button class="buy-btn">get it</button>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-visual"></div>
-          <div class="product-text">
-            <h3>Cap</h3>
-            <div class="price">$52</div>
+      </section>
+
+      <section class="drop-card drop-fire">
+        <div class="card-top">
+          <div class="drop-label">002 — the fire drop</div>
+        </div>
+        <div class="card-center">
+          <h2>be there</h2>
+        </div>
+        <div class="card-bottom">
+          <div class="card-bottom-left">
+            <h3>Heavyweight Tee</h3>
+            <p class="desc">without influence</p>
+          </div>
+          <div class="card-bottom-right">
+            <div class="price">$68</div>
+            <button class="buy-btn">get it</button>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-visual"></div>
-          <div class="product-text">
-            <h3>Poster</h3>
-            <div class="price">$36</div>
+      </section>
+
+      <section class="drop-card drop-water">
+        <div class="card-top">
+          <div class="drop-label">003 — the still drop</div>
+        </div>
+        <div class="card-center">
+          <h2>slow down</h2>
+        </div>
+        <div class="card-bottom">
+          <div class="card-bottom-left">
+            <h3>Heavyweight Tee</h3>
+            <p class="desc">without influence</p>
+          </div>
+          <div class="card-bottom-right">
+            <div class="price">$68</div>
+            <button class="buy-btn">get it</button>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-visual"></div>
-          <div class="product-text">
-            <h3>Hoodie</h3>
-            <div class="price">$98</div>
+      </section>
+      <section class="drop-card drop-fog">
+        <div class="card-top">
+          <div class="drop-label">004 — the fog drop</div>
+        </div>
+        <div class="card-center">
+          <h2>go quiet</h2>
+        </div>
+        <div class="card-bottom">
+          <div class="card-bottom-left">
+            <h3>Heavyweight Tee</h3>
+            <p class="desc">without influence</p>
+          </div>
+          <div class="card-bottom-right">
+            <div class="price">$68</div>
+            <button class="buy-btn">get it</button>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-visual"></div>
-          <div class="product-text">
-            <h3>Mug</h3>
-            <div class="price">$28</div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <section class="signup">
       <p class="prompt">drops only</p>
