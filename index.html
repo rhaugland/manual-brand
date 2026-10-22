@@ -139,9 +139,15 @@
       text-shadow: 0 2px 20px rgba(0,0,0,0.3);
     }
 
-    .product-card {
-      max-width: 700px;
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+      max-width: 900px;
       margin: 0 auto;
+    }
+
+    .product-card {
       text-align: center;
     }
 
@@ -159,7 +165,7 @@
     }
 
     .product-text {
-      margin-top: 24px;
+      margin-top: 12px;
     }
 
     .product-text h3 {
@@ -285,10 +291,9 @@
       .nav-right { gap: 20px; }
       .hero { padding: 0 20px; }
       .product-section { padding: 60px 24px; }
-      .product-card {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        max-width: 400px;
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
       }
       .signup { padding: 100px 24px; }
       .email-form input { width: 180px; }
@@ -318,15 +323,50 @@
 
       <div class="drop-header">
         <div class="drop-label">the cloud drop</div>
-        <h2>imagine without influence</h2>
+        <h2><span class="emphasis">imagine</span> without influence</h2>
       </div>
-      <div class="product-card">
-        <div class="product-visual"></div>
-        <div class="product-text">
-          <h3>Sticker</h3>
-          <p class="desc">remember when looking up at the clouds, not down at the comments, gave you your best ideas</p>
-          <div class="price">$48</div>
-          <button class="buy-btn">get it</button>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-visual"></div>
+          <div class="product-text">
+            <h3>Sticker</h3>
+            <div class="price">$48</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-visual"></div>
+          <div class="product-text">
+            <h3>Tee</h3>
+            <div class="price">$68</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-visual"></div>
+          <div class="product-text">
+            <h3>Cap</h3>
+            <div class="price">$52</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-visual"></div>
+          <div class="product-text">
+            <h3>Poster</h3>
+            <div class="price">$36</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-visual"></div>
+          <div class="product-text">
+            <h3>Hoodie</h3>
+            <div class="price">$98</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-visual"></div>
+          <div class="product-text">
+            <h3>Mug</h3>
+            <div class="price">$28</div>
+          </div>
         </div>
       </div>
     </section>
